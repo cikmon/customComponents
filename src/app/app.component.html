@@ -1,0 +1,7 @@
+<app-input-custom (valueEvent)="selectInputEvent($event)" [pattern]="'[^@\\s]+@[^@\\s]+\\.[^@\\s]+'"></app-input-custom>
+<div>card</div>
+<app-card-custom [titleText]="'Hello, Dr. Robert Fox!'" [listDatesAppointments]="listDatesAppointments" ></app-card-custom>
+<div>calendar</div>
+<app-calendar-custom (selectedDayEvent)="selectDateEvent($event)"> </app-calendar-custom>
+{{inputValue}}
+{{selectDate}}

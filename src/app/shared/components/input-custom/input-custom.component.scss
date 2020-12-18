@@ -1,0 +1,93 @@
+
+.input-box {
+  //position: absolute;
+  top: 65%;
+  left: 50%;
+  width: 350px;
+  padding: 40px;
+  //transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.input-box .user-box {
+  position: relative;
+  input[type="text"] {
+    padding-left: 10px;
+  }
+}
+
+.input-box .user-box input {
+  width: 100%;
+  padding: 15px 0;
+  font-size: 16px;
+  color: #313131;
+  margin-bottom: 5px;
+  //border: none;
+  border: 2px solid #e1e1e1;
+  border-radius: 3px;
+  outline: none;
+  background: transparent;
+  transition: .5s;
+}
+.input-box .user-box input:focus, .input-box .user-box input {
+  border: 2px solid #4e5579;
+  padding: 20px 0 10px 10px;
+  transition: .5s;
+}
+.input-box .user-box label {
+  position: absolute;
+  top:8px;
+  left: 10px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #949494de;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.input-box .user-box input:focus ~ label,
+.input-box .user-box input:valid ~ label {
+  top: -3px!important;
+  font-size: 10px!important;
+}
+
+//.input-box .user-box input:required ~ label {
+//  top: -20px;
+//  left: 0;
+//  color: rgba(148, 18, 27, 0.87);
+//  font-size: 12px;
+//}
+
+.input-box .user-box input:-webkit-autofill{
+  background: transparent;
+}
+
+.form-input-err{
+  //margin-left: 10px;
+  color: #d99d9b;
+  .input-container input:focus ~ label, .input-container label {
+    color: #d99d9b;
+  }
+
+  .input-container input:focus, .input-container input{
+    border: 2px solid #d99d9b;
+  }
+
+}
+.error-message{
+  margin-left: 10px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  //-webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

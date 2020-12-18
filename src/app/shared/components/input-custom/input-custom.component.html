@@ -1,0 +1,12 @@
+<div class="input-box">
+
+  <form #form="ngForm">
+    <div class="user-box" [ngClass]="{'form-input-err' : form.invalid}" >
+     <div class="input-container">
+      <input (keyup)="inputKeydown()" type="text" name="input" required="" [(ngModel)]="inputValue" pattern="{{pattern}}" >
+      <label #inputLabelEl >{{inputLabel}}</label>
+    </div>
+      <div class="error-message" *ngIf="form.invalid">{{errorMessage}}</div>
+    </div>
+  </form>
+</div>

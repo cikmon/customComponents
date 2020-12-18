@@ -1,0 +1,30 @@
+<div class="container-calendar">
+
+  <div class="header-container">
+    <div class="month">
+      {{monthNames[visibleDate.getMonth()].full}}
+    </div>
+    <div class="header-days-container">
+       <button (click)="prev()">
+         <img
+         src="../../../../assets/icons/chevron-left-solid.svg">
+       </button>
+        <span class="header-days">  {{monthNames[visibleDate.getMonth()].small}} {{daysWeekDate[0].getDate()}}-{{daysWeekDate[6].getDate()}} </span>
+       <button (click)="next()">
+         <img
+           src="../../../../assets/icons/chevron-right-solid.svg">
+       </button>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <ng-container *ngFor="let week of weekName; let index=index">
+      <div class="day-box" [ngClass]="{'day-number-today': selectedDay.getTime() === daysWeekDate[index].getTime()}" (click)="setDay(index)">
+       <div class="day-header">{{week}}</div>
+       <div class="day-number">{{daysWeekDate[index].getDate()}}</div>
+       <div class="day-dot" *ngIf="selectedDay.getTime() === daysWeekDate[index].getTime()">.</div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
